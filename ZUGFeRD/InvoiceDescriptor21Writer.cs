@@ -354,7 +354,7 @@ namespace s2industries.ZUGFeRD
                 Writer.WriteElementString("ram:TypeCode", tradeLineItem.TaxType.EnumToString());
                 if (!String.IsNullOrEmpty(_translateTaxCategoryCode(tradeLineItem.TaxCategoryCode)))
                 {
-                    Writer.WriteElementString("ram:ExemptionReason", _translateTaxCategoryCode(tradeLineItem.TaxCategoryCode));
+                    Writer.WriteElementString("ram:ExemptionReason", _translateTaxCategoryCode(tradeLineItem.TaxCategoryCode), Profile.Extended | Profile.XRechnung1 | Profile.XRechnung);
                 }
                 Writer.WriteElementString("ram:CategoryCode", tradeLineItem.TaxCategoryCode.EnumToString());
 
