@@ -707,12 +707,12 @@ namespace s2industries.ZUGFeRD
                     }
                     Writer.WriteEndElement(); // !PayeePartyCreditorFinancialAccount
 
-                    Writer.WriteStartElement("ram:PayeeSpecifiedCreditorFinancialInstitution");
                     if (!String.IsNullOrEmpty(account.BIC))
                     {
+                        Writer.WriteStartElement("ram:PayeeSpecifiedCreditorFinancialInstitution");
                         Writer.WriteElementString("ram:BICID", account.BIC);
+                        Writer.WriteEndElement(); // !PayeeSpecifiedCreditorFinancialInstitution
                     }
-                    Writer.WriteEndElement(); // !PayeeSpecifiedCreditorFinancialInstitution
 
                     Writer.WriteEndElement(); // !SpecifiedTradeSettlementPaymentMeans
                 }
