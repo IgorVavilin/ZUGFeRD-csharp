@@ -37,9 +37,14 @@ namespace s2industries.ZUGFeRD
         {
             get
             {
-                return 0.01m * this.Percent * this.BasisAmount;
+                return TaxAmountCalculated ?? 0.01m * this.Percent * this.BasisAmount;
             }
         }
+
+        /// <summary>
+        /// Overrides TaxAmount in case calculated by caller
+        /// </summary>
+        public decimal? TaxAmountCalculated { get; set; }
 
         /// <summary>
         /// VAT category taxable amount
